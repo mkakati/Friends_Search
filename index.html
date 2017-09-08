@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css">
+  <title>Friends List</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="center-align">
+      Friends List
+    </h1>
+    <input type="text" id="filterInput" placeholder="Search names...">
+    <ul id="names" class="collection with-header">
+      <li class="collection-header">
+        <h5>College Friends</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Lala</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Nishant</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Jishu</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Arindam</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Channa</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Nirav</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Sammer</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Appu</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bitu</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Mohit</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Lungai</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Biplob</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Arghydip</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Prince</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Rabi</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Harsh</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Nilanjan</a>
+      </li>
+
+      <li class="collection-header">
+        <h5>Pathsala Friends</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Jit</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Dimpal</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Nabadip</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bhargab</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Sonu</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Monu</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Devapratim</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Koustav</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bedanta</a>
+      </li>
+      <li class="collection-header">
+        <h5>Delhi Friends</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Ram</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bikash</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Mada</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Rahul</a>
+      <li class="collection-item">
+        <a href="#">Pranjit</a>
+      </li>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Get input element
+    let filterInput = document.getElementById('filterInput');
+    // Add event listener
+    filterInput.addEventListener('keyup', filterNames);
+
+    function filterNames(){
+      // Get value of input
+      let filterValue = document.getElementById('filterInput').value.toUpperCase();
+
+      // Get names ul
+      let ul = document.getElementById('names');
+      // Get lis from ul
+      let li = ul.querySelectorAll('li.collection-item');
+
+      // Loop through collection-item lis
+      for(let i = 0;i < li.length;i++){
+        let a = li[i].getElementsByTagName('a')[0];
+        // If matched
+        if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+          li[i].style.display = '';
+        } else {
+          li[i].style.display = 'none';
+        }
+      }
+
+    }
+  </script>
+</body>
+</html>
